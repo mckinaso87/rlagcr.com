@@ -162,21 +162,69 @@ header {
   -webkit-backdrop-filter: blur(12px) saturate(170%);
 }
 
-.hero-title {
-  font-family: 'Shrikhand', cursive;
-  color: #00CFFF;
-  font-size: 2.7em;
-  letter-spacing: 1.5px;
-  text-shadow:
-    0 0 16px rgba(255,255,255,0.8),
-    0 0 32px rgba(255,255,255,0.5),
-    0 0 64px rgba(255,255,255,0.3);
+.hero-title { display: none; }
+
+.hero-title-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-bottom: 0.2em;
+  overflow: visible;
+}
+.hero-title-svg svg {
+  width: 100%;
+  max-width: 900px;
+  min-width: 320px;
+  height: 80px;
+  overflow: visible;
+  display: block;
+}
+.hero-title-text {
+  font-family: 'Brother Signature', cursive;
+  color: #00CFFF;
+  font-size: 3.2em;
+  text-align: center;
+  margin: 0.3em auto 0.1em auto;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  max-width: 90vw;
+  font-weight: normal;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.hero-title-svg text {
+  font-family: 'Brother Signature', cursive;
+  font-size: 60px;
+  fill: #00CFFF;
+  text-anchor: middle;
+  dominant-baseline: middle;
 }
 
-
-
-
+.hero-title-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.2em;
+  overflow: visible;
+}
+.hero-title-svg svg {
+  display: block;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 900px;
+  min-width: 320px;
+  height: 100px;
+  overflow: visible;
+}
+@media (max-width: 600px) {
+  .hero-title-svg svg {
+    height: 54px;
+  }
+  .hero-title-svg text {
+    font-size: 32px;
+  }
+}
 
 .hero p {
   font-size: 1.35em;
