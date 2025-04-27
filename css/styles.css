@@ -632,24 +632,25 @@ footer {
   font-size: 0.97em;
   margin: 0.3em 0 0.7em 0;
 }
-.event-cta {
+.cta-btn, .event-cta {
   display: inline-block;
-  background: var(--color-accent);
-  color: #fff !important;
+  background: var(--color-accent2);
+  color: var(--color-text) !important;
   padding: 0.4em 1.1em;
   border-radius: 1em;
+  border: 2px solid var(--color-accent3);
+  box-shadow: 0 2px 8px 0 rgba(44,44,44,0.08);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1em;
   letter-spacing: 0.02em;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   margin-top: 0.2em;
 }
-.event-cta:hover, .event-cta:focus {
-  background: var(--color-accent2);
-  color: #fff !important;
+.cta-btn:hover, .event-cta:hover, .cta-btn:focus, .event-cta:focus {
+  background: var(--color-accent);
+  color: var(--color-text) !important;
 }
-
 
 .hero-title-svg text {
   font-family: 'Brother Signature', cursive;
