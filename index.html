@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run Like a Girl Costa Rica (RLAGCR)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo" style="padding: 0.2em 0 0.1em 0;">
+  <img src="img/logo.png" width="64" height="64" style="max-width: 100%; height: auto; display: block; margin: 0 0.5em;" alt="Run Like a Girl logo: stylized text and running girl silhouette">
+</div>
+      <button class="menu-toggle" aria-label="Abrir menú de navegación">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#mission">Misión</a></li>
+        <li><a href="#join">Únete</a></li>
+      </ul>
+    </nav>
+    <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+      });
+    </script>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Run Like a Girl Costa Rica</h1>
+      <p>Empoderando a niñas y mujeres a través de la comunidad, el running y la tecnología.</p>
+      <a href="#join" class="cta-btn">Únete al Movimiento</a>
+    </section>
+    <section id="about" class="info-section">
+      <h2>Sobre RLAGCR</h2>
+      <p>RLAGCR es un movimiento dedicado a reunir a niñas y mujeres empoderadas en Costa Rica que aman correr, conectar e inspirarse mutuamente. Nuestra visión es crear una comunidad solidaria impulsada por IA que celebre la fuerza, la unidad y el progreso.</p>
+    </section>
+    <section id="mission" class="info-section">
+      <h2>Misión</h2>
+      <p>Fomentar un entorno inclusivo donde cada niña y mujer se sienta empoderada para lograr su mejor versión, dentro y fuera de la pista. Aprovechamos la tecnología y la comunidad para inspirar, motivar y conectar a corredoras de todos los niveles.</p>
+    </section>
+    <section id="join" class="info-section">
+      <h2>Únete</h2>
+      <p>¿Lista para correr con nosotras? Regístrate para recibir novedades, participar en eventos y ser parte de nuestra comunidad empoderadora.</p>
+      <a href="mailto:info@rlagcr.com" class="cta-btn">Contact Us</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RLAGCR - Run Like a Girl Costa Rica</p>
+  </footer>
+</body>
+</html>
