@@ -557,7 +557,7 @@ footer {
 .hero-title-text {
   font-family: 'Brother Signature', cursive;
   color: #FFF !important;
-  font-size: 3.2em;
+  font-size: 2.6em;
   text-align: center;
   margin: 0.3em auto 0.1em auto;
   letter-spacing: 0.03em;
@@ -566,6 +566,13 @@ footer {
   font-weight: normal;
   text-shadow: none !important;
 }
+
+@media (max-width: 600px) {
+  .hero-title-text {
+    font-size: 2.1em;
+  }
+}
+
 .hero-title-svg text {
   font-family: 'Brother Signature', cursive;
   font-size: 60px;
