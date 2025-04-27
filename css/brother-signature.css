@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Brother Signature';
-  src: url('../assets/BrotherSignature-7BWnK.otf') format('opentype');
+  src: url('../assets/fonts/BrotherSignature.woff2') format('woff2'),
+       url('../assets/fonts/BrotherSignature-7BWnK.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
