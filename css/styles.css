@@ -1,8 +1,8 @@
 /* RLAGCR - Modern, AI-driven, Empowerment Theme */
 :root {
   --color-bg: #FAF9F6;              /* Off-white / soft bone */
-  --color-bg-secondary: #E2DED8;    /* Deeper taupe/beige for better contrast */
-  --color-card-bg: #ECE7DF;         /* Subtle card background for contrast */
+  --color-bg-secondary: #CFC8BD;    /* Darker taupe/beige for better contrast */
+  --color-card-bg: #D8D2C7;         /* Darker card background for more contrast */
   --color-text: #4A4542;            /* Deep muted taupe (soft but readable) */
   --color-text-secondary: #7B736E;  /* Soft taupe gray */
   --color-header-text: #FFF;         /* Pure white for header/nav text */
@@ -61,7 +61,7 @@ a:hover, a:focus {
 
 
 header {
-  background: var(--color-bg-secondary);
+  background: #bcb6ab;
   box-shadow: 0 2px 16px 0 var(--color-border);
   backdrop-filter: blur(8px);
   position: sticky;
@@ -574,6 +574,7 @@ footer {
 }
 
 .contact-section {
+  background: #cfc8bd;
   text-align: center;
   margin: 2em auto 2em auto;
   padding: 2em 1em 1.5em 1em;
@@ -592,7 +593,7 @@ footer {
 }
 
 .events {
-  background: var(--color-card-bg);
+  background: #cfc8bd; /* darker neutral for contrast */
   border-radius: 1.2em;
   padding: 2em 1em 1.5em 1em;
   margin: 2em auto 2em auto;
