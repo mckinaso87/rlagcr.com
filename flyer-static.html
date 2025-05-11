@@ -23,25 +23,35 @@
       margin: 0;
     }
     
-    /* Duotone theme colors */
+    /* Modern RLAGCR theme colors aligned with website */
     :root {
-      --primary-color: #6D4C3D;
-      --secondary-color: #F1D8D5;
-      --background-color: #F9F3E9;
-      --text-color: #6D4C3D;
-      --accent-color: #A67F65;
+      --color-bg: #FAF9F6;              /* Off-white / soft bone */
+      --color-bg-secondary: #CFC8BD;    /* Darker taupe/beige for better contrast */
+      --color-card-bg: #D8D2C7;         /* Darker card background for more contrast */
+      --color-text: #4A4542;            /* Deep muted taupe (soft but readable) */
+      --color-text-secondary: #7B736E;  /* Soft taupe gray */
+      --color-header-text: #FFF;        /* Pure white for header/nav text */
+      --color-accent: #F1D8D5;          /* Dusty baby pink */
+      --color-accent2: #E8D8B9;         /* Muted buttercream yellow */
+      --color-accent3: #CBBEB5;         /* Light warm taupe */
+      --color-btn: #E8E3DC;             /* Warm mushroom beige */
+      --color-btn-hover: #D8D2CB;       /* Slightly deeper mushroom hover */
+      --color-border: #D6D2C4;          /* Slightly deeper border for contrast */
     }
     
     .flyer-container {
       width: 600px;
-      height: 1000px;
+      height: 1250px; /* Even more height */
       margin: 0;
-      background-color: var(--background-color);
+      background-color: var(--color-bg);
       padding: 30px;
       position: relative;
-      overflow: hidden;
-      background-image: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-color) 100%);
-      position: relative;
+      background-image: linear-gradient(135deg, var(--color-accent) 0%, var(--color-bg) 100%);
+      border-radius: 1.1em;
+      box-shadow: 0 2px 16px 0 rgba(44,44,44,0.09);
+      border: 1.5px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
     }
     
     .logo-container {
@@ -55,54 +65,74 @@
     }
     
     .title {
-      font-family: 'Pacifico', cursive;
-      font-size: 36px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
       text-align: center;
       color: white;
-      margin-bottom: 5px;
-      line-height: 1;
-      margin-top: 10px;
-      text-shadow: 1px 1px 3px rgba(109, 76, 61, 0.8);
+      margin: 15px auto;
+      padding: 0.5em;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4A4542 0%, #7B736E 100%);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      max-width: 80%;
+      display: block;
+    }
+    
+    .montserrat-bold {
+      font-family: 'Montserrat', Arial, sans-serif !important;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--color-text) !important;
+      font-size: 0.45em;
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-left: 0;
     }
     
     .subtitle {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
+      font-family: 'Brother Signature', cursive;
+      font-size: 24px;
       text-align: center;
-      color: white;
+      color: var(--color-header-text);
       margin-bottom: 5px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 2px rgba(109, 76, 61, 0.7);
+      font-weight: normal;
+      letter-spacing: 0.03em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     
     .tagline {
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
       text-align: center;
-      color: #6D4C3D;
+      color: var(--color-text-secondary);
       margin-bottom: 10px;
+      font-style: italic;
     }
     
     .content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 5px;
+      gap: 35px;
+      margin-top: 10px;
       position: relative;
-      margin-bottom: 140px;
+      max-height: 1100px; /* Limit content height */
+      flex: 1;
     }
     
     /* Vertical divider between columns */
     .content::after {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: 5%;
+      bottom: 5%;
       left: 50%;
-      width: 2px;
-      background-color: var(--secondary-color);
+      width: 1px;
+      background-color: var(--color-border);
       transform: translateX(-50%);
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
     }
     
     .section {
@@ -112,23 +142,33 @@
     .section-title {
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      color: white;
+      color: var(--color-header-text);
       margin-bottom: 6px;
       font-weight: bold;
-      padding: 3px 8px;
-      background-color: var(--primary-color);
+      padding: 5px 10px;
+      background-color: var(--color-text);
       display: inline-block;
-      border-radius: 4px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     
     .section-content {
-      font-size: 10px;
-      color: var(--text-color);
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 5px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 12px;
+      color: var(--color-text);
+      background-color: var(--color-card-bg);
+      padding: 8px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--color-border);
+    }
+    
+    .qa-item {
+      margin-bottom: 25px;
+      padding: 15px;
+      background-color: var(--color-card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid var(--color-border);
     }
     
     .section-content p {
@@ -152,25 +192,30 @@
       color: var(--accent-color);
     }
     
+    .footer-wrapper {
+      margin-top: auto;
+      padding: 30px;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
     .footer {
       text-align: center;
-      position: absolute;
-      bottom: 20px;
-      left: 5%;
-      width: 90%;
-      border-top: 2px solid var(--secondary-color);
-      background-color: rgba(241, 216, 213, 0.5);
-      padding: 8px;
+      border-top: 1px solid var(--color-border);
+      background-color: var(--color-card-bg);
+      padding: 5px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 0 30px;
     }
     
     .footer p {
       font-size: 16px;
       font-weight: bold;
       margin: 5px 0;
-      color: var(--primary-color);
+      color: var(--color-text);
     }
     
     .instagram {
@@ -202,17 +247,17 @@
     .decoration-1 {
       top: 20px;
       left: 20px;
-      background-image: url('data:image/svg+xml;utf8,<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 30, 90 40, 100 50 C90 60, 60 70, 50 100 C40 70, 10 60, 0 50 C10 40, 40 30, 50 0 Z" fill="%23A67F65"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 30, 90 40, 100 50 C90 60, 60 70, 50 100 C40 70, 10 60, 0 50 C10 40, 40 30, 50 0 Z" fill="%23CFC8BD"/></svg>');
       background-repeat: no-repeat;
-      opacity: 0.15;
+      opacity: 0.2;
     }
     
     .decoration-2 {
       bottom: 20px;
       right: 20px;
-      background-image: url('data:image/svg+xml;utf8,<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 30, 90 40, 100 50 C90 60, 60 70, 50 100 C40 70, 10 60, 0 50 C10 40, 40 30, 50 0 Z" fill="%23A67F65"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 30, 90 40, 100 50 C90 60, 60 70, 50 100 C40 70, 10 60, 0 50 C10 40, 40 30, 50 0 Z" fill="%23CFC8BD"/></svg>');
       background-repeat: no-repeat;
-      opacity: 0.15;
+      opacity: 0.2;
     }
     
     /* Additional decorative elements for duotone theme */
@@ -247,7 +292,7 @@
     </div>
     
     <h1 class="title">Preguntas Frecuentes</h1>
-    <h2 class="subtitle">Run Like a Girl Costa Rica</h2>
+    <h2 class="subtitle">Run Like a Girl - <span class="montserrat-bold">Costa Rica</span></h2>
     <p class="tagline">Empoderar, Creer y Apoyar: Chicas que apoyan a chicas</p>
     
     <div class="content">
@@ -306,15 +351,16 @@
       </div>
     </div>
     
-    <div class="footer">
-      <p>¡TE ESPERAMOS!</p>
-      <p>Juntas somos más fuertes</p>
-      
-      <div class="instagram">
-        <svg width="12" height="12" viewBox="0 0 448 512" fill="#6D4C3D" style="vertical-align:middle; margin-right:4px;">
-          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.1S388.6 1.7 353.3 0C317.5-1.7 130.5-1.7 94.7 0 59.4 1.7 28 9.9 2.7 36.2S1.7 59.4 0 94.7C-1.7 130.5-1.7 317.5 0 353.3c1.7 35.3 9.9 66.7 36.2 92.1s56.8 34.5 92.1 36.2c35.8 1.7 222.8 1.7 258.6 0 35.3-1.7 66.7-9.9 92.1-36.2s34.5-56.8 36.2-92.1c1.7-35.8 1.7-222.8 0-258.6zM398.8 388c-7.8 19.6-23.1 35-42.7 42.7-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-35-23.1-42.7-42.7-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 23.1-35 42.7-42.7 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 35 23.1 42.7 42.7 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-        </svg>
-        <a href="https://www.instagram.com/runlikeagirlcr/" target="_blank">@runlikeagirlcr</a>
+    <div class="footer-wrapper">
+      <div class="footer">
+        <p>¡TE ESPERAMOS!</p>
+        
+        <div class="instagram">
+          <svg width="12" height="12" viewBox="0 0 448 512" fill="#6D4C3D" style="vertical-align:middle; margin-right:4px;">
+            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.1S388.6 1.7 353.3 0C317.5-1.7 130.5-1.7 94.7 0 59.4 1.7 28 9.9 2.7 36.2S1.7 59.4 0 94.7C-1.7 130.5-1.7 317.5 0 353.3c1.7 35.3 9.9 66.7 36.2 92.1s56.8 34.5 92.1 36.2c35.8 1.7 222.8 1.7 258.6 0 35.3-1.7 66.7-9.9 92.1-36.2s34.5-56.8 36.2-92.1c1.7-35.8 1.7-222.8 0-258.6zM398.8 388c-7.8 19.6-23.1 35-42.7 42.7-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-35-23.1-42.7-42.7-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 23.1-35 42.7-42.7 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 35 23.1 42.7 42.7 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+          </svg>
+          <a href="https://www.instagram.com/runlikeagirlcr/" target="_blank">@runlikeagirlcr</a>
+        </div>
       </div>
     </div>
   </div>
