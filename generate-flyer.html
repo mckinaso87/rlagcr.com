@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate RLAGCR Flyer</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&family=Shrikhand&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Brother Signature';
+      src: url('css/brother-signature.woff2') format('woff2'),
+           url('css/brother-signature.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #F9F3E9;
+      color: #6D4C3D;
+      line-height: 1.5;
+      padding: 20px;
+    }
+    
+    .controls {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    button {
+      background-color: #6D4C3D;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+    
+    button:hover {
+      background-color: #8B5E3C;
+    }
+    
+    .flyer-container {
+      width: 800px;
+      height: 1200px;
+      margin: 0 auto;
+      background-color: #F9F3E9;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo-container img {
+      width: 200px;
+      height: auto;
+    }
+    
+    .title {
+      font-family: 'Brother Signature', cursive;
+      font-size: 60px;
+      text-align: center;
+      color: #6D4C3D;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    
+    .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      text-align: center;
+      color: #6D4C3D;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      text-align: center;
+      color: #6D4C3D;
+      margin-bottom: 40px;
+    }
+    
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      color: #6D4C3D;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    
+    .section-content {
+      font-size: 16px;
+      color: #6D4C3D;
+    }
+    
+    .section-content p {
+      margin-bottom: 10px;
+    }
+    
+    .section-content ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    
+    .section-content li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+    
+    .section-content li:before {
+      content: '✦';
+      position: absolute;
+      left: -20px;
+      color: #F1D8D5;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #F1D8D5;
+    }
+    
+    .footer p {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .instagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .instagram svg {
+      margin-right: 10px;
+    }
+    
+    .instagram a {
+      color: #6D4C3D;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .decoration {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .decoration-1 {
+      top: 20px;
+      left: 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 30, 90 40, 100 50 C90 60, 60 70, 50 100 C40 70, 10 60, 0 50 C10 40, 40 30, 50 0 Z" fill="%236D4C3D"/></svg>');
+      background-repeat: no-repeat;
+    }
+    
+    .decoration-2 {
+      bottom: 20px;
+      right: 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 30, 90 40, 100 50 C90 60, 60 70, 50 100 C40 70, 10 60, 0 50 C10 40, 40 30, 50 0 Z" fill="%236D4C3D"/></svg>');
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <h1>RLAGCR Flyer Generator</h1>
+    <p>Click the button below to generate and download the flyer image</p>
+    <button id="generate-btn">Generate Flyer Image</button>
+    <a id="download-link" style="display: none;">
+      <button>Download Flyer</button>
+    </a>
+  </div>
+
+  <div id="flyer" class="flyer-container">
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Run Like a Girl Costa Rica Logo">
+    </div>
+    
+    <h1 class="title">Preguntas Frecuentes</h1>
+    <h2 class="subtitle">Run Like a Girl Costa Rica</h2>
+    <p class="tagline">Empoderar, Creer y Apoyar: Chicas que apoyan a chicas</p>
+    
+    <div class="content">
+      <div class="left-column">
+        <div class="section">
+          <h3 class="section-title">¿Quienes Somos?</h3>
+          <div class="section-content">
+            <p>RLAGCR es una comunidad vibrante de mujeres en Costa Rica unidas por la pasión de correr y el deseo de crecer juntas. Somos un espacio donde cada paso cuenta, donde conexiones auténticas florecen y donde el apoyo mutuo es nuestra fortaleza.</p>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">Nuestra Misión</h3>
+          <div class="section-content">
+            <p>Crear y nutrir una comunidad de mujeres que:</p>
+            <ul>
+              <li>Corren y se inspiran mutuamente</li>
+              <li>Comparten experiencias y celebran logros</li>
+              <li>Generan impacto positivo en sus comunidades</li>
+              <li>Construyen lazos auténticos y duraderos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">¿Cómo puedo unirme al grupo?</h3>
+          <div class="section-content">
+            <p>Tenemos un formulario de registro general que debe completarse una vez. Cuando tengamos tus datos, te agregaremos a nuestro grupo de WhatsApp donde compartimos todas las actividades. ¡Es súper sencillo!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="right-column">
+        <div class="section">
+          <h3 class="section-title">¿Y si soy principiante?</h3>
+          <div class="section-content">
+            <p>¡TODAS son bienvenidas!! Todas pueden acompañarnos, usualmente tenemos un grupo de práctica (camina-corre) para principiantes. La idea es que esto sea siempre un espacio cómodo, seguro e inclusivo :) No importa tu nivel, lo importante es compartir y crecer juntas.</p>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">¿Tiene algún costo?</h3>
+          <div class="section-content">
+            <p>¡No, es gratis! A veces organizamos encuentros quincenales o mensuales donde armamos paquetes con comida, DJ, regalías y otras actividades planeadas que tendrán un costo asociado, pero siempre lo comunicamos con anticipación.</p>
+            <p>Estas actividades no son obligatorias al unirte a la comunidad, pero ayudan a construir cohesión, motivación e inclusión entre todas. ¡La idea es disfrutar juntas!</p>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">¿Puedo llevar a un hombre?</h3>
+          <div class="section-content">
+            <p>Esta es una comunidad femenina, todas nuestras actividades y mensajes se enfocan en nosotras. Pero no somos excluyentes, si al inicio deseas llevar a tu papá, hermano, novio o amigo, ¡eres igualmente muy bien recibida! :)</p>
+            <p>La idea es que más adelante te sientas cómoda de participar por tu propia cuenta en un espacio en comunidad junto a otras grandes mujeres.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>¡TE ESPERAMOS!</p>
+      <p>Juntas somos más fuertes</p>
+      
+      <div class="instagram">
+        <svg width="22" height="22" viewBox="0 0 448 512" fill="#6D4C3D" style="vertical-align:middle;">
+          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.1S388.6 1.7 353.3 0C317.5-1.7 130.5-1.7 94.7 0 59.4 1.7 28 9.9 2.7 36.2S1.7 59.4 0 94.7C-1.7 130.5-1.7 317.5 0 353.3c1.7 35.3 9.9 66.7 36.2 92.1s56.8 34.5 92.1 36.2c35.8 1.7 222.8 1.7 258.6 0 35.3-1.7 66.7-9.9 92.1-36.2s34.5-56.8 36.2-92.1c1.7-35.8 1.7-222.8 0-258.6zM398.8 388c-7.8 19.6-23.1 35-42.7 42.7-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-35-23.1-42.7-42.7-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 23.1-35 42.7-42.7 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 35 23.1 42.7 42.7 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+        </svg>
+        <a href="https://www.instagram.com/runlikeagirlcr/" target="_blank">Síguenos en Instagram: @runlikeagirlcr</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('generate-btn').addEventListener('click', function() {
+      // Hide the button while generating
+      this.style.display = 'none';
+      
+      // Show a loading message
+      const loadingMsg = document.createElement('p');
+      loadingMsg.textContent = 'Generating flyer... This may take a moment.';
+      loadingMsg.id = 'loading-msg';
+      this.parentNode.insertBefore(loadingMsg, this.nextSibling);
+      
+      // Use setTimeout to allow the loading message to appear
+      setTimeout(function() {
+        const flyerElement = document.getElementById('flyer');
+        
+        html2canvas(flyerElement, {
+          scale: 1,
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: '#F9F3E9'
+        }).then(canvas => {
+          // Convert the canvas to a data URL
+          const imgData = canvas.toDataURL('image/jpeg', 0.9);
+          
+          // Create a link to download the image
+          const downloadLink = document.getElementById('download-link');
+          downloadLink.href = imgData;
+          downloadLink.download = 'RLAGCR-FAQ-Flyer.jpg';
+          downloadLink.style.display = 'inline-block';
+          
+          // Remove the loading message
+          document.getElementById('loading-msg').remove();
+          
+          // Create a preview of the image
+          const imgPreview = document.createElement('div');
+          imgPreview.innerHTML = '<h2>Preview:</h2><img src="' + imgData + '" style="max-width: 100%; height: auto; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">';
+          document.body.appendChild(imgPreview);
+          
+          // Save the image to the server
+          saveImageToServer(imgData);
+        });
+      }, 100);
+    });
+    
+    function saveImageToServer(imgData) {
+      // This is a placeholder function
+      // In a real implementation, you would send the image data to the server
+      console.log('Image would be saved to server');
+      
+      // For now, we'll just simulate saving the image by logging to console
+      console.log('Image generated successfully');
+    }
+  </script>
+</body>
+</html>
